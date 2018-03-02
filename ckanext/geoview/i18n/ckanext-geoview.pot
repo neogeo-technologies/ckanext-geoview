@@ -1,0 +1,60 @@
+# Translations template for ckanext-geoview.
+# Copyright (C) 2018 ORGANIZATION
+# This file is distributed under the same license as the ckanext-geoview
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-geoview 0.0.12\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2018-03-02 16:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ckanext/geoview/plugin.py:133
+msgid "Map viewer"
+msgstr ""
+
+#: ckanext/geoview/plugin.py:237
+msgid "GeoJSON"
+msgstr ""
+
+#: ckanext/geoview/plugin.py:310
+msgid "WMTS"
+msgstr ""
+
+#: ckanext/geoview/public/js/geojson_preview.js:13
+#, python-format
+msgid "An error occurred: %(text)s %(error)s"
+msgstr ""
+
+#: ckanext/geoview/templates/dataviewer/base_form.html:5
+msgid "Map Type"
+msgstr ""
+
+#: ckanext/geoview/templates/dataviewer/base_form.html:6
+msgid "Custom URL"
+msgstr ""
+
+#: ckanext/geoview/templates/dataviewer/geojson.html:12
+#: ckanext/geoview/templates/dataviewer/openlayers2.html:21
+#: ckanext/geoview/templates/dataviewer/openlayers3.html:7
+#: ckanext/geoview/templates/dataviewer/wmts.html:8
+msgid "Loading..."
+msgstr ""
+
+#: ckanext/geoview/templates/dataviewer/openlayers_form.html:3
+msgid "Display Feature Info on Hover"
+msgstr ""
+
+#: ckanext/geoview/templates/dataviewer/openlayers_form.html:5
+msgid "Feature style descriptor"
+msgstr ""
+

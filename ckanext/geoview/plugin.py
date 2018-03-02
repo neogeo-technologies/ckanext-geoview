@@ -9,6 +9,7 @@ from ckan.common import json
 
 from ckan import plugins as p
 import ckan.lib.helpers as h
+from ckan.lib.plugins import DefaultTranslation
 
 try:
     from ckan.lib.datapreview import on_same_domain
@@ -70,12 +71,13 @@ def get_openlayers_viewer_config():
                  if k.startswith(namespace)])
 
 
-class GeoViewBase(p.SingletonPlugin):
+class GeoViewBase(p.SingletonPlugin, DefaultTranslation):
     '''This base class is for view extensions. '''
     if p.toolkit.check_ckan_version(min_version='2.3'):
         p.implements(p.IResourceView, inherit=True)
     else:
         p.implements(p.IResourcePreview, inherit=True)
+    p.implements(p.ITranslation, inherit=True)
     p.implements(p.IConfigurer, inherit=True)
     p.implements(p.IConfigurable, inherit=True)
 
@@ -95,7 +97,7 @@ class GeoViewBase(p.SingletonPlugin):
 
 
 class OLGeoView(GeoViewBase):
-
+    p.implements(p.ITranslation, inherit=True)
     p.implements(p.IRoutes, inherit=True)
     p.implements(p.ITemplateHelpers, inherit=True)
 
@@ -216,6 +218,7 @@ class OLGeoView(GeoViewBase):
 
 
 class GeoJSONView(GeoViewBase):
+    p.implements(p.ITranslation, inherit=True)
     p.implements(p.ITemplateHelpers, inherit=True)
 
     GeoJSON = ['gjson', 'geojson']
@@ -291,10 +294,12 @@ class GeoJSONView(GeoViewBase):
 
 
 class GeoJSONPreview(GeoJSONView):
+    p.implements(p.ITranslation, inherit=True)
     pass
 
 
 class WMTSView(GeoViewBase):
+    p.implements(p.ITranslation, inherit=True)
     p.implements(p.ITemplateHelpers, inherit=True)
 
     WMTS = ['wmts']
@@ -363,4 +368,5 @@ class WMTSView(GeoViewBase):
 
 
 class WMTSPreview(WMTSView):
+    p.implements(p.ITranslation, inherit=True)
     pass

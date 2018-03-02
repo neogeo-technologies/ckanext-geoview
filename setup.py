@@ -28,5 +28,14 @@ setup(
     geojson_preview=ckanext.geoview.plugin:GeoJSONPreview
     wmts_view=ckanext.geoview.plugin:WMTSView
     wmts_preview=ckanext.geoview.plugin:WMTSPreview
+    [babel.extractors]
+    ckan = ckan.lib.extract:extract_ckan
     ''',
+    message_extractors={
+        'ckanext': [
+            ('**.py', 'python', None),
+            ('**.js', 'javascript', None),
+            ('**/templates/**.html', 'ckan', None)
+        ]
+    }
 )
