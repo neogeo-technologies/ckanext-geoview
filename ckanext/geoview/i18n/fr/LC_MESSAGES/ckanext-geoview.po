@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-geoview 0.0.12\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-03-02 16:00+0000\n"
+"POT-Creation-Date: 2018-03-05 09:59+0000\n"
 "PO-Revision-Date: 2018-03-02 16:38+0100\n"
 "Last-Translator: \n"
 "Language: fr\n"
@@ -23,11 +23,11 @@ msgstr ""
 msgid "Map viewer"
 msgstr "Carte interactive"
 
-#: ckanext/geoview/plugin.py:237
+#: ckanext/geoview/plugin.py:238
 msgid "GeoJSON"
 msgstr "GeoJSON"
 
-#: ckanext/geoview/plugin.py:310
+#: ckanext/geoview/plugin.py:313
 msgid "WMTS"
 msgstr "WMTS"
 
@@ -45,8 +45,7 @@ msgid "Custom URL"
 msgstr "URL personnalisé"
 
 #: ckanext/geoview/templates/dataviewer/geojson.html:12
-#: ckanext/geoview/templates/dataviewer/openlayers2.html:21
-#: ckanext/geoview/templates/dataviewer/openlayers3.html:7
+#: ckanext/geoview/templates/dataviewer/openlayers.html:21
 #: ckanext/geoview/templates/dataviewer/wmts.html:8
 msgid "Loading..."
 msgstr "Chargement..."

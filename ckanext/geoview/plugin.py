@@ -97,7 +97,6 @@ class GeoViewBase(p.SingletonPlugin, DefaultTranslation):
 
 
 class OLGeoView(GeoViewBase):
-    p.implements(p.ITranslation, inherit=True)
     p.implements(p.IRoutes, inherit=True)
     p.implements(p.ITemplateHelpers, inherit=True)
 
@@ -218,7 +217,6 @@ class OLGeoView(GeoViewBase):
 
 
 class GeoJSONView(GeoViewBase):
-    p.implements(p.ITranslation, inherit=True)
     p.implements(p.ITemplateHelpers, inherit=True)
 
     GeoJSON = ['gjson', 'geojson']
@@ -294,12 +292,10 @@ class GeoJSONView(GeoViewBase):
 
 
 class GeoJSONPreview(GeoJSONView):
-    p.implements(p.ITranslation, inherit=True)
     pass
 
 
 class WMTSView(GeoViewBase):
-    p.implements(p.ITranslation, inherit=True)
     p.implements(p.ITemplateHelpers, inherit=True)
 
     WMTS = ['wmts']
@@ -368,5 +364,4 @@ class WMTSView(GeoViewBase):
 
 
 class WMTSPreview(WMTSView):
-    p.implements(p.ITranslation, inherit=True)
     pass
