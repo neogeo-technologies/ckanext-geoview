@@ -161,7 +161,7 @@ class OLGeoView(GeoViewBase):
         return correct_format and can_preview_from_domain
 
     def view_template(self, context, data_dict):
-        return 'dataviewer/openlayers2.html'
+        return 'dataviewer/openlayers.html'
 
     def form_template(self, context, data_dict):
         return 'dataviewer/openlayers_form.html'
@@ -173,7 +173,7 @@ class OLGeoView(GeoViewBase):
         return self.can_view(data_dict)
 
     def preview_template(self, context, data_dict):
-        return 'dataviewer/openlayers2.html'
+        return 'dataviewer/openlayers.html'
 
     # Common for IResourceView and IResourcePreview
 

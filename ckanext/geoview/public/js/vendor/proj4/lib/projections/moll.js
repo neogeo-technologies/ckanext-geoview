@@ -1,10 +1,9 @@
-var adjust_lon = require('../common/adjust_lon');
-var EPSLN = 1.0e-10;
-exports.init = function() {};
-
+import adjust_lon from '../common/adjust_lon';
+export function init() {}
+import {EPSLN} from '../constants/values';
 /* Mollweide forward equations--mapping lat,long to x,y
     ----------------------------------------------------*/
-exports.forward = function(p) {
+export function forward(p) {
 
   /* Forward equations
       -----------------*/
@@ -17,7 +16,7 @@ exports.forward = function(p) {
 
   /* Iterate using the Newton-Raphson method to find theta
       -----------------------------------------------------*/
-  for (var i = 0; true; i++) {
+  while (true) {
     var delta_theta = -(theta + Math.sin(theta) - con) / (1 + Math.cos(theta));
     theta += delta_theta;
     if (Math.abs(delta_theta) < EPSLN) {
@@ -38,9 +37,9 @@ exports.forward = function(p) {
   p.x = x;
   p.y = y;
   return p;
-};
+}
 
-exports.inverse = function(p) {
+export function inverse(p) {
   var theta;
   var arg;
 
@@ -73,5 +72,12 @@ exports.inverse = function(p) {
   p.x = lon;
   p.y = lat;
   return p;
+}
+
+export var names = ["Mollweide", "moll"];
+export default {
+  init: init,
+  forward: forward,
+  inverse: inverse,
+  names: names
 };
-exports.names = ["Mollweide", "moll"];
