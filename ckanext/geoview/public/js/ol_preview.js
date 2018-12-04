@@ -93,6 +93,7 @@
 
             addLayer: function (resourceLayer) {
 
+                resourceLayer.singleTile = true;
                 if (ckan.geoview && ckan.geoview.feature_style) {
                     var styleMapJson = JSON.parse(ckan.geoview.feature_style)
                     /* TODO_OL4 how is stylemap converted to OL4 ? */
