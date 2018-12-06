@@ -217,6 +217,7 @@
 
             addLayer: function (resourceLayer) {
 
+                 resourceLayer.singleTile = true;
                 if (ckan.geoview && ckan.geoview.feature_style) {
                     var styleMapJson = JSON.parse(ckan.geoview.feature_style)
                     resourceLayer.styleMap = new OpenLayers.StyleMap(styleMapJson)
@@ -465,7 +466,7 @@
                         })
 
                     this.map.addControl(layerSwitcher);
-                    
+
                     var bboxFrag;
                     var fragMap = OL_HELPERS.parseKVP((window.parent || window).location.hash && (window.parent || window).location.hash.substring(1));
 
