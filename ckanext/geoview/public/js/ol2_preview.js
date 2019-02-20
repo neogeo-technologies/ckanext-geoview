@@ -512,6 +512,11 @@
 
                     ckan.geoview.googleApiKey = this.options.gapi_key;
 
+                    if ('api' in preload_resource) {
+                        var api = JSON.parse( preload_resource.api);
+                        preload_resource.format = 'WMS';
+                        preload_resource.url = api.url + '#' + api.typename;
+                    };
 
                     withLayers(preload_resource, proxyUrl, proxyServiceUrl, $_.bind(this.addLayer, this), this.map);
 
