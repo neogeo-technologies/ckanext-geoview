@@ -192,6 +192,12 @@ class OLGeoView(GeoViewBase):
     def setup_template_variables(self, context, data_dict):
         import ckanext.resourceproxy.plugin as proxy
 
+        api = json.loads(data_dict['resource'].get('api', '{}'))
+        if api:
+            data_dict['resource']['format'] = 'wms'
+            data_dict['resource']['url'] = \
+                '{url}#{typename}'.format(url=api['url'], typename=api['typename'])
+
         same_domain = on_same_domain(data_dict)
 
         if not data_dict['resource'].get('format'):
