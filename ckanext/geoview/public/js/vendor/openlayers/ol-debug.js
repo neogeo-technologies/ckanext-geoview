@@ -30758,14 +30758,15 @@ goog.require('ol.transform');
  * @const
  * @type {string}
  */
-ol.OL_URL = 'https://openlayers.org/';
-
+//ol.OL_URL = 'https://openlayers.org/';
+ol.OL_URL = '#';
+ol.OL_LOGO_URL = '';
 
 /**
  * @const
  * @type {string}
  */
-ol.OL_LOGO_URL = 'data:image/png;base64,' +
+/*ol.OL_LOGO_URL = 'data:image/png;base64,' +
     'iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAA3NCSVQICAjb4U/gAAAACXBI' +
     'WXMAAAHGAAABxgEXwfpGAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAA' +
     'AhNQTFRF////AP//AICAgP//AFVVQECA////K1VVSbbbYL/fJ05idsTYJFtbbcjbJllmZszW' +
@@ -30787,7 +30788,7 @@ ol.OL_LOGO_URL = 'data:image/png;base64,' +
     'hgWVcPm+9cuLoyy4kCJDzCm6d8PSFoh0zvQNC5OjDJhQopPPJqph1doJBUD5tnkbZiUEqaCn' +
     'B3bTqLTFG1bPn71kw4b+GFdpLElKIzRxxgYgWNYc5SCENVHKeUaltHdXx0dZ8uBI1hJ2UUDg' +
     'q82CM2MwKeibqAvSO7MCABq0wXEPiqWEAAAAAElFTkSuQmCC';
-
+*/
 
 /**
  * @type {Array.<ol.renderer.Type>}

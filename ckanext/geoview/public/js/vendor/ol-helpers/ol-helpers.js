@@ -2629,15 +2629,14 @@ ol.proj.addProjection(createEPSG4326Proj('EPSG:4326:LONLAT', 'enu'));
                 deferredResult.resolve([baseMapLayer]);
             } else if (mapConfig.type.toLowerCase() == 'osm') {
                 urls = mapConfig['url'];
-
                 var baseMapLayer = new ol.layer.Tile(
                     {title: mapConfig['title'] || 'OSM',
                         type: isBaseLayer ? 'base' : undefined, // necessary for ol3-layerswitcher
                         source: new ol.source.OSM({
                             url: urls,
-                            /* TODO
+                            
                              attribution: mapConfig.attribution
-                             */
+                           
                         })
                     });
 
@@ -2687,7 +2686,7 @@ ol.proj.addProjection(createEPSG4326Proj('EPSG:4326:LONLAT', 'enu'));
                 });
 
                 deferredResult.resolve([baseMapLayer]);
-            } else if (mapConfig.type == 'XYZ') {
+            } else if (mapConfig.type.toUpperCase() == 'XYZ') {
                 // Custom XYZ layer
                 urls = mapConfig['url'];
                 if (!urls)
@@ -2699,9 +2698,7 @@ ol.proj.addProjection(createEPSG4326Proj('EPSG:4326:LONLAT', 'enu'));
                         type: isBaseLayer ? 'base' : undefined, // necessary for ol3-layerswitcher
                         source: new ol.source.XYZ({
                             url: urls,
-                            /* TODO
-                             attribution: mapConfig.attribution
-                             */
+                            attributions:[ new ol.Attribution({html:'Source ' + mapConfig.attribution})]
                         })
                     });
 
@@ -2961,11 +2958,15 @@ ol.proj.addProjection(createEPSG4326Proj('EPSG:4326:LONLAT', 'enu'));
             this.currentUnit = map.getView().getProjection().getUnits();
             this.currentScale = map.getScale();
         }
-
+        var attributionControl = new ol.control.Attribution({
+                    collapsible: false
+                  });
 
         var controls = [
             new ol.control.ZoomSlider(),
-            mousePosControl
+            attributionControl
+            // GSR 04/03/19 : deactivate ugly position control. 
+            // mousePosControl
         ]
         layerSwitcher && controls.push(layerSwitcher);
         featureDetailsControl && controls.push(featureDetailsControl);
