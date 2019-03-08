@@ -195,7 +195,7 @@
                                     mimeType == OL_HELPERS.SUPPORTED_MIME_TYPES["wmts"] ||
                                     mimeType == OL_HELPERS.SUPPORTED_MIME_TYPES["arcgis_rest"]) {
                                     // reminder : the proxyService will remove OGC parameters from proxied URL
-                                    return url;  // return proxyServiceUrl || url;
+                                    return proxyServiceUrl || url;
                                 } else
                                     return proxyUrl || url;
                             }
