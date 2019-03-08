@@ -26,6 +26,9 @@ def proxy_service_resource(self, context, data_dict):
     log.info('Proxify resource {id}'.format(id=resource_id))
     resource = logic.get_action('resource_show')(context, {'id': resource_id})
     url = resource['url']
+    api = json.loads(resource.get('api', '{}'))
+    if api:
+        url = '{url}#{typename}'.format(url=api['url'], typename=api['typename'])
 
     return proxy_service_url(self, url)
 
