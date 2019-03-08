@@ -1,5 +1,6 @@
 from logging import getLogger
 from ckan import plugins as p
+from ckan.common import json
 import urlparse
 
 import requests
