@@ -2861,7 +2861,7 @@ ol.proj.addProjection(createEPSG4326Proj('EPSG:4326:LONLAT', 'enu'));
          return layerAdder(OL_HELPERS.createEsriGeoJSONLayer(proxyUri))
          } */
         else if (matchExtension("wms")) {
-            return OL_HELPERS.withWMSLayers(proxyUri, proxifyFn(url, true), layerAdder, resourceNames /*layername*/, true/*useTiling*/, map)
+            return OL_HELPERS.withWMSLayers(proxyUri, proxifyFn(url, false), layerAdder, resourceNames /*layername*/, true/*useTiling*/, map)
         } else if (matchExtension("wmts")) {
             return OL_HELPERS.withWMTSLayers(proxyUri, layerAdder, resourceNames /*layername*/, undefined/*projection*/, undefined /*resolution*/, undefined /*matrixSet*/);
         } else if (matchExtension("wfs")) {
