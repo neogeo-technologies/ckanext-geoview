@@ -1,6 +1,8 @@
 from logging import getLogger
 from ckan import plugins as p
+from ckan.common import config
 from ckan.common import json
+from ckan.plugins.toolkit import asint
 import urlparse
 
 import requests
@@ -11,8 +13,8 @@ from urllib import urlencode
 
 log = getLogger(__name__)
 
-MAX_FILE_SIZE = 3 * 1024 * 1024  # 1MB
-CHUNK_SIZE = 512
+MAX_FILE_SIZE = asint(config.get('ckan.resource_proxy.max_file_size', 1024**2))
+CHUNK_SIZE = asint(config.get('ckan.resource_proxy.chunk_size', 4096))
 
 # HTTP request parameters that may conflict with OGC services protocols and should be excluded from proxied calls
 OGC_EXCLUDED_PARAMS = ['service', 'version', 'request', 'outputformat', 'typename', 'layers', 'srsname', 'bbox', 'maxfeatures']
